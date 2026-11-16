@@ -1,0 +1,2 @@
+﻿n_pairs,B_flips,C_flips,B_only,C_only,both,neither,risk_diff_B_minus_C,mcnemar_exact_two_sided_p,cluster_case_bootstrap95_lo,cluster_case_bootstrap95_hi
+140,4,0,4,0,0,136,0.02857142857142857,0.125,0.0,0.06428571428571428

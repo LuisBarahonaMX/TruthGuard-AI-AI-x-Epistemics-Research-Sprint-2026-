@@ -1,0 +1,52 @@
+﻿# Python y entornos
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+# Secretos / credenciales
+.env
+.env.*
+!.env.example
+*secret*
+*credential*
+*.pem
+*.key
+# Ejecuciones locales nuevas y archivos temporales
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+# Informes de prepublicacion con rutas privadas (no subir)
+_publication_audit/
+# Salidas privadas futuras (los resultados cientificos versionados existentes se conservan)
+local_runs/
+private_results/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Credenciales y archivos locales
+.env
+.env.*
+!.env.example
+*.key
+credentials.json
+service-account*.json
+
+# Auditoria interna
+_publication_audit/
+
+# Datos originales pendientes de revision de seguridad
+results/seven_models_v2_4096.jsonl

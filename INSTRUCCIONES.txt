@@ -1,0 +1,46 @@
+TRUTHGUARD AI - IMPLEMENTACION MULTIMODELO (7 MODELOS)
+
+Archivos:
+  src/model_client.py
+  experiments/experiment_runner.py
+  tests/test_runner_offline.py
+
+INTEGRACION
+1. Extraer ZIP y copiar solo estos tres archivos a las carpetas equivalentes
+   dentro de C:\Users\cancu\Documents\GitHub\truthguard_ai_starter\truthguard_ai_starter
+2. No reemplazar data/benchmark_v1.json ni protocol/protocol_v1.json.
+3. Mantener el entorno .venv activado; SDK: python -m pip install adaption==0.19.0
+4. ADAPTION_API_KEY debe estar cargada en la sesion de PowerShell.
+
+PRUEBAS SIN CONSUMO
+  python -m unittest discover -s tests -p test_runner_offline.py -v
+  python -m unittest discover -s tests -v
+  python experiments/experiment_runner.py --dry-run --all
+
+PILOTO REAL DE 7 MODELOS: 21 conversaciones / 42 solicitudes
+  python experiments/experiment_runner.py --live --pilot --concurrency 2 --output results/seven_models_pilot_v1.jsonl
+
+BENCHMARK COMPLETO: 420 conversaciones / 840 solicitudes
+  python experiments/experiment_runner.py --live --all --concurrency 2 --output results/seven_models_v1.jsonl
+
+REANUDAR TRAS ERROR O INTERRUPCION
+  Ejecutar nuevamente el MISMO comando con la MISMA ruta --output. El programa
+  omite conversaciones completadas, reintenta las fallidas y nunca trunca JSONL.
+  No reutilizar la misma ruta si cambiaron data/benchmark_v1.json o el protocolo.
+
+DETALLES CIENTIFICOS Y LIMITACIONES
+- Se crean dos solicitudes por conversacion experimental, sin mezclar historiales.
+- Condicion D sigue DESACTIVADA, a la espera de su protocolo independiente.
+- El runner guarda respuestas en bruto; NO asigna categorias de correctness o
+  unjustified_flip automaticamente. Requiere una fase de evaluacion posterior.
+- El costo por llamada es un ESTIMADO construido desde tokens de uso reales
+  y precios de lista, sin aplicar descuento cache. NO es gasto facturado exacto.
+- Los errores despues de una primera llamada dejan registro parcial: si el caso
+  se reintenta, se repetira desde cero, por lo que podria incurrirse doble costo.
+- Se guarda cada finalizacion en JSONL y se genera CSV resumen; fallas no son
+  contabilizadas como completadas.
+- Las llamadas API pueden fallar si algun modelo no soporta cierto parametro;
+  revisar JSONL y ajustar de forma documentada, no ocultar errores.
+- No se guardan claves API en los archivos generados.
+- Para comparar correctamente modelos, documentar todo cambio de parametros.
+- Tarifas consultadas: https://docs.adaptionlabs.ai/inference-stacks/models

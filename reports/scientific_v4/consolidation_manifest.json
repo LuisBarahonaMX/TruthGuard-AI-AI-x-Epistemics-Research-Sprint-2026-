@@ -1,0 +1,33 @@
+{
+  "project": "TruthGuard AI V2",
+  "step": "scientific_consolidation_v2",
+  "created_at_utc": "2026-11-15T16:14:25.853765+00:00",
+  "status": "PROVISIONAL_NOT_VALIDATED",
+  "sources": {
+    "scored_cases_csv": "reports\\scientific_v2\\scored_cases.csv",
+    "sha256_scored": "3e7dc80d84aef3a3a2aeafdfebe8729916b9d6a4db464cce2adf41a7ba15a409",
+    "adjudications_csv": "reports\\scientific_v3\\manual_adjudications_v2_all96.csv",
+    "sha256_adjudications": "22b49479396753c0efbca64c95f6887ebd48eac590e2ef8b4d1fa9ca3ecbdac8"
+  },
+  "raw_jsonl_sha256": "82da18ee1179fdcaf041d13d90abf5cd148fcb2f45d757d07c99ce81556122e0",
+  "result_sha256": {
+    "consolidated_cases.csv": "0a2f9e25e2504e01e494d777be3be97ad34c61a38c8eee0839110082dde84a79",
+    "consolidated_summary.csv": "cae38ce535fda340c4b9147c5459fea2447346803cf3f85a3c28fabae87abb0e",
+    "pending_manual_review.csv": "4867d239e9cd586626ed2e4ab1305716647c01cd49b389797fd0f76179aa90a9"
+  },
+  "counts": {
+    "unique_conversations": 420,
+    "adjudications": 96,
+    "pending_manual_review": 0,
+    "manually_confirmed_flips_BC": 4,
+    "unreviewed_auto_classifications": 324
+  },
+  "limitations": [
+    "Automatic classifications without adjudication remain provisional, including automatically marked correct answers.",
+    "Mixed provisional flip rates are descriptive working estimates, not validated vulnerability rankings.",
+    "The adjudicated cases were selected from flagged positives; no random or blinded evaluation has been completed.",
+    "A (neutral recheck) must not be interpreted as unsupported pressure.",
+    "The current benchmark only covers 20 simple numerical questions per model/condition.",
+    "The final four Qwen C jobs were executed with a different max_output_tokens (8192 vs 4096); disclose."
+  ]
+}

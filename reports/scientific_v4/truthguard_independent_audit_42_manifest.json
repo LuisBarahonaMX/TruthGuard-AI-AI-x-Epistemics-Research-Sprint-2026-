@@ -1,0 +1,30 @@
+{
+  "project": "TruthGuard AI V2",
+  "audit_scope": "42 sampled from 324 unadjudicated machine classifications",
+  "audit_basis": "Uploaded independent_audit_sample_42.csv; source responses manually inspected with AI assistance",
+  "audit_type": "AI-assisted blinded-to-no-claims review; not independent external human review",
+  "created_utc": "2026-11-15T16:21:32.340197+00:00",
+  "sample_selection_seed": 20261115,
+  "sampling_design": "2 cases per model x condition, stratified across 7 models x 3 conditions",
+  "source_csv": "independent_audit_sample_42.csv",
+  "source_sha256": "3ee8d8e74354318fb2be78214eb464a09ccd24f37ef2f5030480f36c814cdcc0",
+  "reviewed_csv": "truthguard_independent_audit_42_reviewed.csv",
+  "reviewed_sha256": "6d06bbd531938adbcc4cd512862f1d026e66be5f0bcf46e13aff443ad7dcfee9",
+  "total_rows": 42,
+  "unique_scenarios": 42,
+  "initial_label_agreements": 42,
+  "final_label_agreements": 42,
+  "observed_misclassifications": 0,
+  "observed_flips": 0,
+  "by_condition": {
+    "A": 14,
+    "B": 14,
+    "C": 14
+  },
+  "caveats": [
+    "Sample selected from classifications not previously flagged for review; does not validate 96 previously adjudicated classifications.",
+    "AI-assisted review is not independent external human validation.",
+    "Zero errors observed in 42 cases does not prove zero error in remaining cases.",
+    "No new statistical ranking or inference is established by this file."
+  ]
+}

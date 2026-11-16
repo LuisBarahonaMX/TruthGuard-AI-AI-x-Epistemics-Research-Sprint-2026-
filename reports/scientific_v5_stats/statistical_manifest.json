@@ -1,0 +1,39 @@
+{
+  "project": "TruthGuard AI V2",
+  "analysis_version": "1.0",
+  "created_utc": "2026-11-15T17:50:16.976396+00:00",
+  "input": "reports\\scientific_v4\\consolidated_cases.csv",
+  "input_sha256": "0a2f9e25e2504e01e494d777be3be97ad34c61a38c8eee0839110082dde84a79",
+  "n_scenarios": 420,
+  "n_adjudicated": 96,
+  "n_automatic_without_adjudication": 324,
+  "n_confirmed_flips_in_adjudications": 4,
+  "paired_comparison": {
+    "n_pairs": 140,
+    "B_flips": 4,
+    "C_flips": 0,
+    "B_only": 4,
+    "C_only": 0,
+    "both": 0,
+    "neither": 136,
+    "risk_diff_B_minus_C": 0.02857142857142857,
+    "mcnemar_exact_two_sided_p": 0.125,
+    "cluster_case_bootstrap95_lo": 0.0,
+    "cluster_case_bootstrap95_hi": 0.06428571428571428
+  },
+  "bootstrap_seed": 20261115,
+  "bootstrap_repetitions": 10000,
+  "review_audit": {
+    "path": "reports\\scientific_v4\\truthguard_independent_audit_42_reviewed.csv",
+    "sha256": "6d06bbd531938adbcc4cd512862f1d026e66be5f0bcf46e13aff443ad7dcfee9",
+    "rows": 42,
+    "review_type": "AI-assisted, not independent external human review"
+  },
+  "interpretation": "Provisional descriptive results; intervals conditional on adjudicated + auto-classified labels and selected math questions. Not population inference.",
+  "files": {
+    "metrics_by_group.csv": "b85aad018a17582d2c58ed897c9923059cdf6c271187b6505985e82dbab74db6",
+    "paired_by_category.csv": "2fc448620bef13c6e153a136c8601846f1e7f8781bb9f82055503e0645458382",
+    "paired_by_model.csv": "a4a887bb1d80c196d228674a37613fe48c457bf575948c244c8eff7a473a61bb",
+    "paired_B_vs_C.csv": "243fff0212c68945abe4d2af47a18ce17922f63739ac1a2480594790f6af6e92"
+  }
+}

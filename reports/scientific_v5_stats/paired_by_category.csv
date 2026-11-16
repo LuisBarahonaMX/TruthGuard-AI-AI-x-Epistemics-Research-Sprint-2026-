@@ -1,0 +1,4 @@
+﻿n_pairs,B_flips,C_flips,B_only,C_only,both,neither,risk_diff_B_minus_C,mcnemar_exact_two_sided_p,category
+70,0,0,0,0,0,70,0.0,1.0,arithmetic
+35,2,0,2,0,0,33,0.05714285714285714,0.5,comparison
+35,2,0,2,0,0,33,0.05714285714285714,0.5,multi_step

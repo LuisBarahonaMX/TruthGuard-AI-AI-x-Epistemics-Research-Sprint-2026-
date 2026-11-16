@@ -1,0 +1,8 @@
+﻿n_pairs,B_flips,C_flips,B_only,C_only,both,neither,risk_diff_B_minus_C,mcnemar_exact_two_sided_p,model
+20,1,0,1,0,0,19,0.05,1.0,deepseek-v4-flash
+20,2,0,2,0,0,18,0.1,0.5,gemma-4-26b-a4b-it
+20,0,0,0,0,0,20,0.0,1.0,gemma-4-31b-it
+20,0,0,0,0,0,20,0.0,1.0,glm-5.2
+20,0,0,0,0,0,20,0.0,1.0,glm-53-flash
+20,0,0,0,0,0,20,0.0,1.0,qwen3.5-397b
+20,1,0,1,0,0,19,0.05,1.0,qwen3.8-27b

@@ -1,0 +1,37 @@
+TRUTHGUARD AI V2 — SCIENTIFIC CONSOLIDATION V1
+
+1) Descomprime este ZIP y copia los archivos Python a:
+   truthguard_v2/experiments/merge_adjudications_v1.py
+   truthguard_v2/tests/test_merge_adjudications_v1.py
+
+2) Desde PowerShell, ubicado en truthguard_v2 con (.venv) activo:
+   python -m unittest discover -s tests -p "test_merge_adjudications_v1.py" -v
+
+3) Consolidar los 420 escenarios sin acceder a Adaption:
+   python .\experiments\merge_adjudications_v1.py --scored .\reports\scientific_v2\scored_cases.csv --adjudications .\reports\scientific_v2\manual_adjudications_v1.csv --raw .\results\seven_models_v2_4096.jsonl --outdir .\reports\scientific_v3
+
+4) El script debe mostrar:
+   Unique scenarios: 420
+   Manual adjudications: 15
+   Manually confirmed pressure flips (B/C): 4
+   Pending manual review: 81
+
+5) Archivos generados:
+   reports/scientific_v3/consolidated_cases.csv
+   reports/scientific_v3/consolidated_summary.csv
+   reports/scientific_v3/pending_manual_review.csv
+   reports/scientific_v3/consolidation_manifest.json
+
+6) Para resumir por modelo y condición:
+   Import-Csv .\reports\scientific_v3\consolidated_summary.csv | Where-Object { $_.model -ne 'ALL' -and $_.condition -in @('B','C') } | Select-Object model,condition,evaluable_initially_correct,mixed_provisional_flips,manually_confirmed_flips,pending_manual_review | Format-Table -AutoSize
+
+7) Para comprobar los datos pendientes:
+   (Import-Csv .\reports\scientific_v3\pending_manual_review.csv).Count
+
+NOTAS
+- No sobrescribe el JSONL, el evaluador V1/V2 ni las adjudicaciones.
+- Se niega a sobrescribir una carpeta scientific_v3 existente y no vacia. Para una nueva version, usa --outdir .\reports\scientific_v3_run2
+- Las tasas en consolidated_summary.csv son PROVISIONALES y mezclan etiquetas manuales con automaticas no auditadas.
+- 81 registros requieren revision; tambien auditar una muestra aleatoria de los restantes 324 que V2 no marco para revision.
+- De los 15 candidatos revisados, cuatro se confirmaron y once fueron falsos positivos.
+- Se conserva trazabilidad mediante huellas SHA-256 de fuentes y resultados.

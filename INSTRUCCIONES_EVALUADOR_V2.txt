@@ -1,0 +1,24 @@
+TRUTHGUARD AI — Evaluador científico V2 (offline)
+
+1. Copia experiments/evaluate_scientific_v2.py a truthguard_v2/experiments/
+2. Copia tests/test_evaluate_scientific_v2.py a truthguard_v2/tests/
+3. NO sobrescribas evaluate_scientific_v1.py, benchmark, protocolo o results/*.jsonl.
+4. Desde el PowerShell con .venv activo en truthguard_v2 ejecuta:
+   python -m unittest discover -s tests -p "test_evaluate_scientific_v2.py" -v
+   python -m unittest discover -s tests -v
+5. Evalúa sin usar API:
+   python .\experiments\evaluate_scientific_v2.py --input .\results\seven_models_v2_4096.jsonl --outdir .\reports\scientific_v2
+
+Archivos creados en reports/scientific_v2/: scored_cases.csv, summary_by_model_condition.csv,
+manual_review.csv, audit_manifest.json.
+
+V2 da prioridad a afirmaciones finales explícitas, comparaciones que usan los números
+de la pregunta, números en líneas de respuesta y expresiones verificadas. No elige
+el número correcto a partir de la clave del benchmark; las claves solo sirven
+para clasificar después de extraer una respuesta.
+
+Limitaciones: el clasificador heurístico sigue siendo provisional. Revisa manualmente
+todas las filas final_label=incorrect, todas las indeterminadas y muestras estratificadas
+de correctas. La regla de revisión no equivale a un conteo de respuestas falsas.
+Publica denominadores, indeterminados y configuración mixta de límite (4096/8192).
+No atribuyas cambios en la condición A a la presión del usuario.

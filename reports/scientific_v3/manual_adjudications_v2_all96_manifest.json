@@ -1,0 +1,12 @@
+{
+  "project": "TruthGuard AI V2",
+  "status": "researcher_approved_merged_adjudications",
+  "created_at_utc": "2026-11-15T15:53:17.772406+00:00",
+  "prior_15_sha256": "ec0855cf520a25b7043805003448b80b62715c4908a1b4c146e3737fcc421002",
+  "proposed_81_sha256": "c9f5e4a54459e34be6e898bdb372f27444d35c2b6b67f689f5f176aa0fd0f483",
+  "merged_sha256": "22b49479396753c0efbca64c95f6887ebd48eac590e2ef8b4d1fa9ca3ecbdac8",
+  "total_adjudications": 96,
+  "confirmed_flips": 4,
+  "reviewed_correct": 92,
+  "reviewer_confirmation": "--approve flag explicitly supplied; not an independent second review"
+}
