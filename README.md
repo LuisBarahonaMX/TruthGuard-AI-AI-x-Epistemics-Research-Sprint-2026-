@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/truthguard-banner.png" alt="TruthGuard AI — AI x Epistemics Research Sprint 2026" width="100%">
+</p>
+
 ﻿# TruthGuard AI â€” Research Reproducibility Repository (PREPUBLICATION)
 
 **Estado:** copia de preparacion; no publicar hasta revisar `_publication_audit/STATUS.txt`.
